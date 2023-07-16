@@ -168,6 +168,11 @@ static unsigned int mousebg = 0;
  */
 static unsigned int defaultattr = 11;
 
+/* scripts */
+static char *openurl[] = { "/bin/sh", "-c", "st-openurl", "externalpipe", NULL };
+static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
+static char *copyword[] = { "/bin/sh", "-c", "st-copyword",  "externalpipe", NULL };
+
 /*
  * Force mouse select/shortcuts while mask is active (when MODE_MOUSE is set).
  * Note that if you want to use ShiftMask with selmasks, set this to an other
@@ -213,6 +218,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Page_Up,     kscrollup,      {.i = -1} }, // 向上翻一页
 	{ TERMMOD,              XK_Page_Down,   kscrolldown,    {.i = -1} }, // 向下翻一页
 	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} }, // 在当前cwd下打开新的终端
+	{ TERMMOD,              XK_S,           externalpipe,   {.v = openurl } },    // 打开url
+	{ TERMMOD,              XK_O,           externalpipe,   {.v = copyoutput } }, // 拷贝命令输出
+	{ TERMMOD,              XK_space,       externalpipe,   {.v = copyword } },   // 拷贝文本
 };
 
 /*
