@@ -248,7 +248,12 @@ static Shortcut shortcuts[] = {
  * If you want keys other than the X11 function keys (0xFD00 - 0xFFFF)
  * to be mapped below, add them to this array.
  */
-static KeySym mappedkeys[] = { -1 };
+static KeySym mappedkeys[] = {
+	XK_J,
+	XK_K,
+	XK_Q,
+	XK_Tab,
+};
 
 /*
  * State bits to ignore when matching key or button events.  By default,
@@ -355,7 +360,7 @@ static Key key[] = {
 	{ XK_Right,         XK_ANY_MOD,     "\033OC",        0,   +1},
 	{ XK_ISO_Left_Tab,  ShiftMask,      "\033[Z",        0,    0},
 	{ XK_Return,        Mod1Mask,       "\033\r",        0,    0},
-	{ XK_Return,        XK_ANY_MOD,     "\r",            0,    0},
+	{ XK_Return,        XK_NO_MOD,      "\r",            0,    0},
 	{ XK_Insert,        ShiftMask,      "\033[4l",      -1,    0},
 	{ XK_Insert,        ShiftMask,      "\033[2;2~",    +1,    0},
 	{ XK_Insert,        ControlMask,    "\033[L",       -1,    0},
@@ -471,6 +476,26 @@ static Key key[] = {
 	{ XK_F33,           XK_NO_MOD,      "\033[20;5~",    0,    0},
 	{ XK_F34,           XK_NO_MOD,      "\033[21;5~",    0,    0},
 	{ XK_F35,           XK_NO_MOD,      "\033[23;5~",    0,    0},
+
+	/* 自定义映射 reference https://st.suckless.org/patches/fix_keyboard_input */
+  // "CSI u" -> "\x1b[<code>;<modifiers>u"
+  // https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and/
+	{ XK_J,            ControlMask|ShiftMask,          "\033[74;6u",  0,  0},
+	{ XK_K,            ControlMask|ShiftMask,          "\033[75;6u",  0,  0},
+	{ XK_Q,            ControlMask|ShiftMask,          "\033[81;6u",  0,  0},
+	{ XK_Return,       ControlMask,                    "\033[13;5u",  0,  0},
+	{ XK_Return,       ControlMask|ShiftMask,          "\033[13;6u",  0,  0},
+	{ XK_Return,       Mod1Mask,                       "\033[13;3u",  0,  0},
+	{ XK_Return,       Mod1Mask|ControlMask,           "\033[13;7u",  0,  0},
+	{ XK_Return,       Mod1Mask|ControlMask|ShiftMask, "\033[13;8u",  0,  0},
+	{ XK_Return,       Mod1Mask|ShiftMask,             "\033[13;4u",  0,  0},
+	{ XK_Return,       ShiftMask,                      "\033[13;2u",  0,  0},
+	{ XK_Tab,          ControlMask,                    "\033[9;5u",   0,  0},
+	{ XK_Tab,          ControlMask|ShiftMask,          "\033[1;5Z",   0,  0},
+	{ XK_Tab,          Mod1Mask,                       "\033[1;3Z",   0,  0},
+	{ XK_Tab,          Mod1Mask|ControlMask,           "\033[1;7Z",   0,  0},
+	{ XK_Tab,          Mod1Mask|ControlMask|ShiftMask, "\033[1;8Z",   0,  0},
+	{ XK_Tab,          Mod1Mask|ShiftMask,             "\033[1;4Z",   0,  0},
 };
 
 /*
