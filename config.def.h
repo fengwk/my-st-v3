@@ -212,6 +212,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_D,           kscrolldown,    {.i =  5} }, // 向下翻10行
 	{ TERMMOD,              XK_Page_Up,     kscrollup,      {.i = -1} }, // 向上翻一页
 	{ TERMMOD,              XK_Page_Down,   kscrolldown,    {.i = -1} }, // 向下翻一页
+	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} }, // 在当前cwd下打开新的终端
 };
 
 /*
