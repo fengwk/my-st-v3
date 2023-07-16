@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "SauceCodePro Nerd Font:size=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -94,34 +94,36 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+// Alacritty同款配色
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  /* 8 normal colors */
+  "#1d1f21", /* black   */
+  "#cc6666", /* red     */
+  "#b5bd68", /* green   */
+  "#f0c674", /* yellow  */
+  "#81a2be", /* blue    */
+  "#b294bb", /* magenta */
+  "#8abeb7", /* cyan    */
+  "#c5c8c6", /* white   */
+
+  /* 8 bright colors */
+  "#666666", /* black   */
+  "#d54e53", /* red     */
+  "#b9ca4a", /* green   */
+  "#e7c547", /* yellow  */
+  "#90B4E0", /* blue    */
+  "#c397d8", /* magenta */
+  "#83C9BC", /* cyan    */
+  "#eaeaea", /* white   */
 
 	[255] = 0,
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+  /* special colors */
+  "#c5c8c6", // 光标前景色
+  "#1b1b1b", // 光标背景色
+	"#c5c8c6", // 默认的前景色
+	"#1b1b1b", // 默认的背景色
 };
 
 
