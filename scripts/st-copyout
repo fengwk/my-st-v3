@@ -1,12 +1,19 @@
 #!/bin/sh
-# Using external pipe with st, give a dmenu prompt of recent commands,
-# allowing the user to copy the output of one.
-# xclip required for this script.
-# By Jaywalker and Luke
+
 tmpfile=$(mktemp /tmp/st-cmd-output.XXXXXX)
 trap 'rm "$tmpfile"' 0 1 15
-tee | sed 's/\x00//g' > $tmpfile
+# 从输入流中获取terminal内容，并剔除0字符，剔除末尾空格
+tee | sed 's/\x00//g; s/\s*$//' > $tmpfile
+# 截取最后一行即当前的路径，例如~/tmp >
 ps1="$(cat "$tmpfile" | grep -a "\S" | tail -n 1 | sed 's/^\s*//' | cut -d' ' -f1)"
-chosen="$(cat "$tmpfile" | grep -aF "$ps1" | sed '$ d' | tac | dwm-rofi -dmenu -i -p "Copy which command's output?" | sed 's/[^^]/[&]/g; s/\^/\\^/g')"
-eps1="$(echo "$ps1" | sed 's/[^^]/[&]/g; s/\^/\\^/g')"
-awk "/^$chosen$/{p=1;print;next} p&&/$eps1/{p=0};p" "$tmpfile" | xclip -selection clipboard
+# 将所有命令输入给rofi进行选择
+chosen="$(cat "$tmpfile" | grep -aF "$ps1" | sed '$ d' | tac | dwm-rofi -dmenu -i -p "Copy which command's output?" -kb-custom-8 'Ctrl+Return' -kb-accept-custom '')"
+op="$?"
+# sed '/^^/[&]/g'可以将每个字符用[]包裹避免转义问题
+echosen="$(echo -n "$chosen" | sed 's/[^^]/[&]/g')"
+eps1="$(echo -n "$ps1" | sed 's/[^^]/[&]/g')"
+# 使用选中的命令找到对应命令的输出
+awk -v s1="$echosen" -v s2="$eps1" '{if ($0 ~ s1) { p=1 } else if ($0 ~ s2) { p=0 } if (p == 1) { print $0 }}' "$tmpfile" | xclip -selection clipboard
+if [ "$op" -eq 0 ]; then
+  xdotool key --delay 0 Ctrl+V
+fi
