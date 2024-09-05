@@ -130,69 +130,70 @@ float alpha = 1;
 // 	"#1b1b1b", // 默认的背景色
 // };
 
-// catppuccin mocha 配色
-// https://github.com/catppuccin/st
+// catppuccin macchiato
+// https://github.com/catppuccin/st/blob/main/themes/macchiato.h
 static const char *colorname[] = {
 
 	/* 8 normal colors */
-	"#45475A",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#BAC2DE",
+	"#494D64",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#B8C0E0",
 
 	/* 8 bright colors */
-	"#585B70",
-	"#F38BA8",
-	"#A6E3A1",
-	"#F9E2AF",
-	"#89B4FA",
-	"#F5C2E7",
-	"#94E2D5",
-	"#A6ADC8",
+	"#5B6078",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#A5ADCB",
 
 	[255] = 0,
 
   /* special colors */
-  "#F5E0DC", // 光标前景色
-  "#1E1E2E", // 光标背景色
-	"#CDD6F4", // 默认的前景色
-	"#1E1E2E", // 默认的背景色
+  "#F4DBD6", // 光标前景色
+  "#24273A", // 光标背景色
+	"#CAD3F5", // 默认的前景色
+	"#24273A", // 默认的背景色
 };
 
-// catppuccin macchiato 配色
+// catppuccin mocha
+// https://github.com/catppuccin/st
 // static const char *colorname[] = {
 //
 // 	/* 8 normal colors */
-// 	"#494D64",
-// 	"#ED8796",
-// 	"#A6DA95",
-// 	"#EED49F",
-// 	"#8AADF4",
-// 	"#F5BDE6",
-// 	"#8BD5CA",
-// 	"#B8C0E0",
+// 	"#45475A",
+// 	"#F38BA8",
+// 	"#A6E3A1",
+// 	"#F9E2AF",
+// 	"#89B4FA",
+// 	"#F5C2E7",
+// 	"#94E2D5",
+// 	"#BAC2DE",
 //
 // 	/* 8 bright colors */
-// 	"#5B6078",
-// 	"#ED8796",
-// 	"#A6DA95",
-// 	"#EED49F",
-// 	"#8AADF4",
-// 	"#F5BDE6",
-// 	"#8BD5CA",
-// 	"#A5ADCB",
+// 	"#585B70",
+// 	"#F38BA8",
+// 	"#A6E3A1",
+// 	"#F9E2AF",
+// 	"#89B4FA",
+// 	"#F5C2E7",
+// 	"#94E2D5",
+// 	"#A6ADC8",
 //
 // 	[255] = 0,
 //
 //   /* special colors */
-//   "#F4DBD6", // 光标前景色
-//   "#24273A", // 光标背景色
-// 	"#CAD3F5", // 默认的前景色
-// 	"#24273A", // 默认的背景色
+//   "#F5E0DC", // 光标前景色
+//   "#1E1E2E", // 光标背景色
+// 	"#CDD6F4", // 默认的前景色
+// 	"#1E1E2E", // 默认的背景色
 // };
 
 
