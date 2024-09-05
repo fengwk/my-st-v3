@@ -94,40 +94,106 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+// float alpha = 0.8;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 // Alacritty同款配色
+// static const char *colorname[] = {
+//
+//   /* 8 normal colors */
+//   "#1d1f21", /* black   */
+//   "#cc6666", /* red     */
+//   "#b5bd68", /* green   */
+//   "#f0c674", /* yellow  */
+//   "#81a2be", /* blue    */
+//   "#b294bb", /* magenta */
+//   "#8abeb7", /* cyan    */
+//   "#c5c8c6", /* white   */
+//
+//   /* 8 bright colors */
+//   "#666666", /* black   */
+//   "#d54e53", /* red     */
+//   "#b9ca4a", /* green   */
+//   "#e7c547", /* yellow  */
+//   "#90B4E0", /* blue    */
+//   "#c397d8", /* magenta */
+//   "#83C9BC", /* cyan    */
+//   "#eaeaea", /* white   */
+//
+// 	[255] = 0,
+//
+//   /* special colors */
+//   "#c5c8c6", // 光标前景色
+//   "#1b1b1b", // 光标背景色
+// 	"#c5c8c6", // 默认的前景色
+// 	"#1b1b1b", // 默认的背景色
+// };
+
+// catppuccin mocha 配色
+// https://github.com/catppuccin/st
 static const char *colorname[] = {
 
-  /* 8 normal colors */
-  "#1d1f21", /* black   */
-  "#cc6666", /* red     */
-  "#b5bd68", /* green   */
-  "#f0c674", /* yellow  */
-  "#81a2be", /* blue    */
-  "#b294bb", /* magenta */
-  "#8abeb7", /* cyan    */
-  "#c5c8c6", /* white   */
+	/* 8 normal colors */
+	"#45475A",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#BAC2DE",
 
-  /* 8 bright colors */
-  "#666666", /* black   */
-  "#d54e53", /* red     */
-  "#b9ca4a", /* green   */
-  "#e7c547", /* yellow  */
-  "#90B4E0", /* blue    */
-  "#c397d8", /* magenta */
-  "#83C9BC", /* cyan    */
-  "#eaeaea", /* white   */
+	/* 8 bright colors */
+	"#585B70",
+	"#F38BA8",
+	"#A6E3A1",
+	"#F9E2AF",
+	"#89B4FA",
+	"#F5C2E7",
+	"#94E2D5",
+	"#A6ADC8",
 
 	[255] = 0,
 
   /* special colors */
-  "#c5c8c6", // 光标前景色
-  "#1b1b1b", // 光标背景色
-	"#c5c8c6", // 默认的前景色
-	"#1b1b1b", // 默认的背景色
+  "#F5E0DC", // 光标前景色
+  "#1E1E2E", // 光标背景色
+	"#CDD6F4", // 默认的前景色
+	"#1E1E2E", // 默认的背景色
 };
+
+// catppuccin macchiato 配色
+// static const char *colorname[] = {
+//
+// 	/* 8 normal colors */
+// 	"#494D64",
+// 	"#ED8796",
+// 	"#A6DA95",
+// 	"#EED49F",
+// 	"#8AADF4",
+// 	"#F5BDE6",
+// 	"#8BD5CA",
+// 	"#B8C0E0",
+//
+// 	/* 8 bright colors */
+// 	"#5B6078",
+// 	"#ED8796",
+// 	"#A6DA95",
+// 	"#EED49F",
+// 	"#8AADF4",
+// 	"#F5BDE6",
+// 	"#8BD5CA",
+// 	"#A5ADCB",
+//
+// 	[255] = 0,
+//
+//   /* special colors */
+//   "#F4DBD6", // 光标前景色
+//   "#24273A", // 光标背景色
+// 	"#CAD3F5", // 默认的前景色
+// 	"#24273A", // 默认的背景色
+// };
 
 
 /*
