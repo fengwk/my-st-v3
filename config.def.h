@@ -94,39 +94,73 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+// float alpha = 0.8;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 // Alacritty同款配色
+// static const char *colorname[] = {
+//
+//   /* 8 normal colors */
+//   "#1d1f21", /* black   */
+//   "#cc6666", /* red     */
+//   "#b5bd68", /* green   */
+//   "#f0c674", /* yellow  */
+//   "#81a2be", /* blue    */
+//   "#b294bb", /* magenta */
+//   "#8abeb7", /* cyan    */
+//   "#c5c8c6", /* white   */
+//
+//   /* 8 bright colors */
+//   "#666666", /* black   */
+//   "#d54e53", /* red     */
+//   "#b9ca4a", /* green   */
+//   "#e7c547", /* yellow  */
+//   "#90B4E0", /* blue    */
+//   "#c397d8", /* magenta */
+//   "#83C9BC", /* cyan    */
+//   "#eaeaea", /* white   */
+//
+// 	[255] = 0,
+//
+//   /* special colors */
+//   "#c5c8c6", // 光标前景色
+//   "#1b1b1b", // 光标背景色
+// 	"#c5c8c6", // 默认的前景色
+// 	"#1b1b1b", // 默认的背景色
+// };
+
+// catppuccin macchiato
+// https://github.com/catppuccin/st/blob/main/themes/macchiato.h
 static const char *colorname[] = {
 
-  /* 8 normal colors */
-  "#1d1f21", /* black   */
-  "#cc6666", /* red     */
-  "#b5bd68", /* green   */
-  "#f0c674", /* yellow  */
-  "#81a2be", /* blue    */
-  "#b294bb", /* magenta */
-  "#8abeb7", /* cyan    */
-  "#c5c8c6", /* white   */
+	/* 8 normal colors */
+	"#494D64",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#B8C0E0",
 
-  /* 8 bright colors */
-  "#666666", /* black   */
-  "#d54e53", /* red     */
-  "#b9ca4a", /* green   */
-  "#e7c547", /* yellow  */
-  "#90B4E0", /* blue    */
-  "#c397d8", /* magenta */
-  "#83C9BC", /* cyan    */
-  "#eaeaea", /* white   */
+	/* 8 bright colors */
+	"#5B6078",
+	"#ED8796",
+	"#A6DA95",
+	"#EED49F",
+	"#8AADF4",
+	"#F5BDE6",
+	"#8BD5CA",
+	"#A5ADCB",
 
 	[255] = 0,
 
   /* special colors */
-  "#c5c8c6", // 光标前景色
-  "#1b1b1b", // 光标背景色
-	"#c5c8c6", // 默认的前景色
-	"#1b1b1b", // 默认的背景色
+  "#F4DBD6", // 光标前景色
+  "#24273A", // 光标背景色
+	"#CAD3F5", // 默认的前景色
+	"#24273A", // 默认的背景色
 };
 
 
